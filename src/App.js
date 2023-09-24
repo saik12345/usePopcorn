@@ -88,9 +88,9 @@ export default function App() {
           setError("");
           const res = await fetch(
             `https://www.omdbapi.com/?apikey=${KEY}&s=${query}`,
-            console.log(`http://www.omdbapi.com/?apikey=${KEY}&s=${query}`);
             { signal: controller.signal }
           );
+          console.log(`http://www.omdbapi.com/?apikey=${KEY}&s=${query}`);
           if (!res.ok) throw new Error("Something went wrong!!");
 
           const data = await res.json();
