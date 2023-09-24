@@ -88,6 +88,7 @@ export default function App() {
           setError("");
           const res = await fetch(
             `http://www.omdbapi.com/?apikey=${KEY}&s=${query}`,
+            console.log(`http://www.omdbapi.com/?apikey=${KEY}&s=${query}`);
             { signal: controller.signal }
           );
           if (!res.ok) throw new Error("Something went wrong!!");
@@ -98,6 +99,7 @@ export default function App() {
           setMovies(data.Search);
         } catch (error) {
           console.log(error.message);
+          console.log(error);
           if (error.name !== "AbortError") setError(error.message);
         } finally {
           setIsLoading(false);
