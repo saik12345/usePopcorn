@@ -485,7 +485,7 @@ function WatchedSummary({ watched }) {
       <div>
         <p>
           <span>#️⃣</span>
-          <span>{watched.length!=null?watched.length:0} movies</span>
+          <span>{watched!=null?watched.length:0} movies</span>
         </p>
         <p>
           <span>⭐️</span>
