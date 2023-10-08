@@ -436,7 +436,7 @@ function Movie({ movie, onSelectMovie }) {
 function WatchedMoviesList({ watched, onDeleteWatched }) {
   return (
     <ul className="list">
-      {watched.map((movie) => (
+      {watched?.map((movie) => (
         <WatchedMovie
           movie={movie}
           key={movie.imdbID}
@@ -485,7 +485,7 @@ function WatchedSummary({ watched }) {
       <div>
         <p>
           <span>#️⃣</span>
-          <span>{watched.length} movies</span>
+          <span>{watched.length!=null?0:watched.length} movies</span>
         </p>
         <p>
           <span>⭐️</span>
